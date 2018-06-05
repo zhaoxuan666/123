@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
@@ -78,5 +78,6 @@ int main( void )
 	pthread_cond_destroy(&cond);   // 销毁条件变量
 	pthread_mutex_destroy(&mutex); // 销毁互斥量
 }
+
 
 
