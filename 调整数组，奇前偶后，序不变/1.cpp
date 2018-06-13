@@ -1,5 +1,6 @@
 #include<iostream>
 
+
 using namespace std;
 void move1(int a[],int len)
 {
