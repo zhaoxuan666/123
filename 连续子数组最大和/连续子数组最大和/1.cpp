@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 int find1(int *a,int len)
 {
 	if (len<2)
