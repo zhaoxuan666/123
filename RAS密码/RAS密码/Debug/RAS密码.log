@@ -1,0 +1,58 @@
+﻿生成启动时间为 2018/6/1 16:13:05。
+     1>项目“F:\代码每日一练\RAS密码\RAS密码\RAS密码.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\RAS密码.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt 1.cpp
+         1.cpp
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(14): error C2146: 语法错误: 缺少“;”(在标识符“PrimeDet”的前面)
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(14): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(14): error C2146: 语法错误: 缺少“)”(在标识符“n”的前面)
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(14): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(14): error C2059: 语法错误:“)”
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(16): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(16): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(74): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(76): error C2146: 语法错误: 缺少“;”(在标识符“a”的前面)
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(76): error C2065: “a”: 未声明的标识符
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(84): error C2065: “a”: 未声明的标识符
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(96): error C2065: “a”: 未声明的标识符
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(111): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(113): error C2146: 语法错误: 缺少“;”(在标识符“b”的前面)
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(113): error C2065: “b”: 未声明的标识符
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(119): error C2065: “b”: 未声明的标识符
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(131): error C2065: “b”: 未声明的标识符
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(137): error C2065: “a”: 未声明的标识符
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(137): error C2065: “b”: 未声明的标识符
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(146): error C2065: “a”: 未声明的标识符
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(146): error C2065: “b”: 未声明的标识符
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(158): error C2065: “a”: 未声明的标识符
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(158): error C2065: “b”: 未声明的标识符
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(181): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(189): error C2064: 项不会计算为接受 1 个参数的函数
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(252): error C2146: 语法错误: 缺少“;”(在标识符“CodedMessage”的前面)
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(252): error C2668: “pow”: 对重载函数的调用不明确
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\math.h(583): 可能是“long double pow(long double,int)”
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\math.h(581): 或       “long double pow(long double,long double)”
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\math.h(535): 或       “float pow(float,int)”
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\math.h(533): 或       “float pow(float,float)”
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\math.h(497): 或       “double pow(double,int)”
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\math.h(122): 或       “double pow(double,double)”
+                 尝试匹配参数列表“(long, __int64)”时
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(258): error C2146: 语法错误: 缺少“;”(在标识符“DecodedMessage”的前面)
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(258): error C2668: “pow”: 对重载函数的调用不明确
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\math.h(583): 可能是“long double pow(long double,int)”
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\math.h(581): 或       “long double pow(long double,long double)”
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\math.h(535): 或       “float pow(float,int)”
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\math.h(533): 或       “float pow(float,float)”
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\math.h(497): 或       “double pow(double,int)”
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\math.h(122): 或       “double pow(double,double)”
+                 尝试匹配参数列表“(long, __int64)”时
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(266): error C2144: 语法错误:“long”的前面应有“;”
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(278): error C2064: 项不会计算为接受 1 个参数的函数
+     1>f:\代码每日一练\ras密码\ras密码\1.cpp(282): error C2064: 项不会计算为接受 1 个参数的函数
+     1>已完成生成项目“F:\代码每日一练\RAS密码\RAS密码\RAS密码.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.74
