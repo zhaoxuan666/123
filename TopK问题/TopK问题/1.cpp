@@ -29,7 +29,7 @@ void AdjustDown(int *a,int n,int m)
 int main()
 {
 	int a[]={2,3,1,4,52,2,12,5,7,1,33,3};
-	for (int )
+	for (int i;i<n;i++)
 	{
 	}
 }
