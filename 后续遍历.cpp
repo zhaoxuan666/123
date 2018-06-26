@@ -26,7 +26,7 @@ public:
             if(tmp->right==NULL||tmp->right==prev)
         	{
         		V.push_back(tmp.top());
-			prev=cur;
+			prev=tmp;
 			S.pop();
         	}
 		else
