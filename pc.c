@@ -1,34 +1,36 @@
-ï»¿  #include <stdio.h>
+  #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
 #include <errno.h>
 #include <unistd.h>
 
-#define PRO_CNT 1  // ç”Ÿäº§è€…çº¿ç¨‹ä¸ªæ•°
-#define CON_CNT 2  // æ¶ˆè´¹è€…çº¿ç¨‹ä¸ªæ•°
+#define PRO_CNT 1  // Éú²úÕßÏß³Ì¸öÊı
+#define CON_CNT 2  // Ïû·ÑÕßÏß³Ì¸öÊı
 
 pthread_cond_t cond;
 pthread_mutex_t mutex;
 int num = 0;
 
-// ç”Ÿäº§è€…çº¿ç¨‹
+// Éú²úÕßÏß³Ì
+
+
 void *pro(void *arg) {
 	int id = *(int*)arg;
 	free(arg);
 	while ( 1 ){
 		pthread_mutex_lock(&mutex);
-		printf("%d ç”Ÿäº§è€…çº¿ç¨‹å¼€å§‹ç”Ÿäº§ç¬¬%däº§å“\n", id, num+1);
+		printf("%d Éú²úÕßÏß³Ì¿ªÊ¼Éú²úµÚ%d²úÆ·\n", id, num+1);
 		num ++;
 		sleep(rand()%3);
-		printf("%d ç”Ÿäº§è€…çº¿ç¨‹ç”Ÿäº§ç¬¬%däº§å“ç»“æŸ\n", id, num);
+		printf("%d Éú²úÕßÏß³ÌÉú²úµÚ%d²úÆ·½áÊø\n", id, num);
 		pthread_cond_signal(&cond);
 		pthread_mutex_unlock(&mutex);
 		sleep(rand()%3);
 	}
 }
 
-// æ¶ˆè´¹è€…çº¿ç¨‹
+// Ïû·ÑÕßÏß³Ì
 void *con(void *arg)
 {
 	int id = *(int*)arg;
@@ -37,14 +39,14 @@ void *con(void *arg)
 	while ( 1 ){
 		pthread_mutex_lock(&mutex);
 		while (num <= 0 ) {
-			printf("%dæ¶ˆè´¹è€…çº¿ç¨‹å¼€å§‹ç­‰å¾…æ¶ˆè´¹äº§å“\n", id);
+			printf("%dÏû·ÑÕßÏß³Ì¿ªÊ¼µÈ´ıÏû·Ñ²úÆ·\n", id);
 			pthread_cond_wait(&cond, &mutex);
-			printf("%dæ¶ˆè´¹è€…çº¿ç¨‹ç­‰å¾…ç»“æŸ\n", id);
+			printf("%dÏû·ÑÕßÏß³ÌµÈ´ı½áÊø\n", id);
 		}
-		printf("%dæ¶ˆè´¹è€…çº¿ç¨‹å¼€å§‹%dæ¶ˆè´¹äº§å“\n", id, num);
+		printf("%dÏû·ÑÕßÏß³Ì¿ªÊ¼%dÏû·Ñ²úÆ·\n", id, num);
 		num --;
 		sleep(rand()%3);
-		printf("%dæ¶ˆè´¹è€…çº¿ç¨‹æ¶ˆè´¹%däº§å“ç»“æŸ\n", id, num+1);
+		printf("%dÏû·ÑÕßÏß³ÌÏû·Ñ%d²úÆ·½áÊø\n", id, num+1);
 		pthread_mutex_unlock(&mutex);
 		sleep(rand()%3);
 	}
@@ -56,27 +58,27 @@ int main( void )
 
 	srand(getpid());
 
-	pthread_cond_init(&cond, NULL); // åˆå§‹åŒ–æ¡ä»¶å˜é‡
-	pthread_mutex_init(&mutex, NULL); // åˆå§‹åŒ–äº’æ–¥é‡
+	pthread_cond_init(&cond, NULL); // ³õÊ¼»¯Ìõ¼ş±äÁ¿
+	pthread_mutex_init(&mutex, NULL); // ³õÊ¼»¯»¥³âÁ¿
 
-	for (int i=0; i<PRO_CNT; i++ ) // åˆ›å»ºç”Ÿäº§è€…çº¿ç¨‹
+	for (int i=0; i<PRO_CNT; i++ ) // ´´½¨Éú²úÕßÏß³Ì
 	{
 		int *p = malloc(sizeof(int));
 		*p = i;
 		pthread_create(&tids[i], NULL, pro, p);
 	}
 	
-	for (int i=0; i<CON_CNT; i++) { // åˆ›å»ºæ¶ˆè´¹è€…çº¿ç¨‹
+	for (int i=0; i<CON_CNT; i++) { // ´´½¨Ïû·ÑÕßÏß³Ì
 		int *p = malloc(sizeof(int));
 		*p = i;
 		pthread_create(&tids[PRO_CNT+i], NULL, con, p);
 	}
 
-	for (int i=0; i<PRO_CNT+CON_CNT; i++) // å›æ”¶çº¿ç¨‹
+	for (int i=0; i<PRO_CNT+CON_CNT; i++) // »ØÊÕÏß³Ì
 		pthread_join(tids[i], NULL);
 
-	pthread_cond_destroy(&cond);   // é”€æ¯æ¡ä»¶å˜é‡
-	pthread_mutex_destroy(&mutex); // é”€æ¯äº’æ–¥é‡
+	pthread_cond_destroy(&cond);   // Ïú»ÙÌõ¼ş±äÁ¿
+	pthread_mutex_destroy(&mutex); // Ïú»Ù»¥³âÁ¿
 }
 
 
